@@ -15,7 +15,7 @@ documentation = "https://qianfan.readthedocs.io/en/stable/README.html"
 keywords = ["baidu", "qianfan"]
 
 [tool.poetry.dependencies]
-python = ">=3.7,<4"
+python = ">=3.8,<4"
 requests = ">=2.24"
 aiohttp = ">=3.7.0"
 aiolimiter = ">=1.1.0"
@@ -73,11 +73,22 @@ myst-parser = ">=0.19.2"
 pytest-mock = "3.11.1"
 types-protobuf = "4.24.0.4"
 setuptools = "*"
+papermill = { version = "^2.5.0", python = ">=3.8", optional = true }
+nbformat = { version = "^5.10.3", python = ">=3.8", optional = true }
+ipykernel = { version = "^6.29.3", python = ">=3.8", optional = true }
+duckduckgo-search = { version = "^5.1.0", python = ">=3.8", optional = true }
+arxiv = { version = "^2.1.0", python = ">=3.8", optional = true }
 
 [tool.poetry.extras]
 langchain = ["langchain"]
 data_clean = ["ltp", "emoji", "sentencepiece", "torch"]
+cookbook_common = ['langchain', 'duckduckgo-search','arxiv','papermill', 'nbformat','ipykernel']
 all = ["langchain", "ltp", "emoji", "sentencepiece", "torch"]
+
+[[tool.poetry.source]]
+name = "mirrors"
+url = "https://pypi.tuna.tsinghua.edu.cn/simple/"
+priority = "default"
 
 [tool.ruff.lint]
 extend-select = ["PLW1514"]

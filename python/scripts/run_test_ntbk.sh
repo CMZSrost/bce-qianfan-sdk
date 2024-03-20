@@ -28,4 +28,5 @@ if [ ! -z $func_call ]; then
 fi
 
 cd "$root_dir"/python/test_CI || exit
+python3 -m ipykernel install --user --name python3
 poetry run coverage run -m  pytest -v -r A --full-trace  test_ntbk.py"$func_call" --ak "$QIANFAN_ACCESS_KEY" --sk "$QIANFAN_SECRET_KEY" --keywords "$KEYWORDS_DICT" --root-dir "$root_dir"

@@ -9,6 +9,9 @@ build: prepare_output
 install:
 	$(MAKE) -C python install
 
+install_ntbk:
+	$(MAKE) -C python install_ntbk
+
 uninstall:
 	pip uninstall -y qianfan
 
@@ -32,7 +35,7 @@ test: clean install
 	$(MAKE) -C python test
 	$(MAKE) -C go test
 
-test_ntbk: clean install
+test_ntbk: clean install_ntbk
 	$(MAKE) -C python test_ntbk func_call=$(func_call)
 
 mock: 

@@ -4,8 +4,8 @@ build:
 install:
 	poetry install -E all
 
-# install_ntbk:
-# 	poetry install -E all
+install_ntbk:
+	poetry install --with dev -E cookbook_common
 
 uninstall:
 	pip uninstall -y qianfan
@@ -28,7 +28,7 @@ lint: install
 test: clean install 
 	cd . && bash scripts/run_test.sh
 
-test_ntbk: clean install
+test_ntbk: clean install_ntbk
 	cd . && bash scripts/run_test_ntbk.sh $(func_call)
 
 .PHONY: build install uninstall clean 
