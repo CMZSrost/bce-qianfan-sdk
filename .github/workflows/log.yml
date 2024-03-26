@@ -28,7 +28,7 @@ jobs:
         run: |
           cd ./scripts
           bash ./release_note.sh python
-          echo "release_note=$(cat release_note.txt)" >> $GITHUB_OUTPUT
+          echo "release_note="$(cat release_note.txt) >> $GITHUB_OUTPUT
       - name: show pr collection
         run: |
           echo ${{ steps.pr_collection.outputs.release_note }}
