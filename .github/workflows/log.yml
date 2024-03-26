@@ -29,4 +29,5 @@ jobs:
           cd ./scripts
           bash ./release_note.sh python
           echo "::set-output name=pr_collection::$(cat release_note.txt)"
+          echo $(cat release_note.txt)
           
